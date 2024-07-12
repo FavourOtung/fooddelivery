@@ -26,7 +26,7 @@ const Dishes = ({handleLike, liked}) => {
    
         <div className='text-xs'>
             <div className='flex justify-between items-center'> 
-                <span className='text-sm font-bold'>Popular Dishes</span>
+                <span className='text-sm font-bold'>Popular Dishes for you</span>
                 <p className='text-primary'>view all ›</p>
             </div>
     

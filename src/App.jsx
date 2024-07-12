@@ -9,7 +9,7 @@ import Category from './components/category'
 
 
 const App = () => {
-
+//handling likes
   const [liked, setLiked] = useState("gray");
 
   const handleLike =() =>{  
