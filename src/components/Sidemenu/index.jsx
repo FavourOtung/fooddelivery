@@ -6,6 +6,7 @@ import { LuHistory } from "react-icons/lu";
 import { MdOutlineMessage } from "react-icons/md";
 import { TbMessageStar } from "react-icons/tb";
 import { MdMyLocation } from "react-icons/md";
+import {Link, Outlet} from 'react-router-dom';
 
 const SidemenuLinks=[
   {
@@ -55,7 +56,9 @@ const SidemenuLinks=[
 
 const Sidemenu = () => {
   return (
-    <div className='bg-white flex flex-col p-6 items-center text-sm w-56'>
+    <div className='flex gap-96'>
+    <div className='top-0 left-0 bg-white flex flex-col p-6 
+    items-center text-sm w-56 h-screen justify-between'>
 
         <span className='font-bold pb-5 text-xl flex'>GoMeal
           <p className='text-primary'>.</p></span>
@@ -64,10 +67,10 @@ const Sidemenu = () => {
         <div className='links'>
           <ul>
             {SidemenuLinks.map(({id, name, link, icon}) => (
-              <li key={id} className='w-full p-3 px-6 my-3 text-gray-500
+              <li key={id} className='w-full p-3 my-2 px-6 text-gray-500
               hover:bg-primary hover:text-white hover: rounded-md 
-              flex gap-3 items-center'>
-                <p className='text-xl'>{icon}</p><a href='{link}'>{name}</a>
+              flex gap-3 items-center hover:cursor-pointer '>
+                <p className='text-xl'>{icon}</p><Link key='{id}' to={`/sidemenu/${id}`} >{name}</Link>
               </li>
             ))}
           </ul>
@@ -80,6 +83,12 @@ const Sidemenu = () => {
           <button className='w-24 bg-white text-black p-2
           rounded-md text-xs font-semibold'>Upgrade</button>
         </div>
+        </div>
+
+        <div className='ml-56'>
+        <Outlet/>
+        </div>
+        
       
     </div>
   )

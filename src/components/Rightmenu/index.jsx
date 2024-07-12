@@ -6,6 +6,24 @@ import { SlLocationPin } from "react-icons/sl";
 import { RiCoupon3Fill } from "react-icons/ri";
 import { FaMoneyBillTransfer } from 'react-icons/fa6';
 
+const ordermenu= [
+  {
+    id: 1,
+    name: "Pepperoni Pizza",
+    image: '/images/pepperonipizza.png',
+  },
+  {
+    id: 2,
+    name: "Cheese Burger",
+    image: '/images/cheeseburger.png',
+  },
+  { 
+    id: 3,
+    name: "Vegan Pizza",
+    image: '/images/veganpizza.png',
+  },
+]
+
 
 const Rightmenu = () => {
   return (
@@ -54,8 +72,8 @@ const Rightmenu = () => {
           {/* <i></i> */}
           <p className='font-bold text-lg text-primary flex items-center gap-2'>
             <SlLocationPin /><p className='text-sm text-black'>Elm Street, 23</p></p>
-          <button className='border border-primary
-           text-primary rounded-md p-1 px-4 text-xs'>Change</button>
+          <button className='border border-primary transform transition ease-in-out duration-200 hover:scale-105
+          hover:bg-primary hover:text-white text-primary rounded-md p-1 px-4 text-xs'>Change</button>
         </div>
 
         <p className='max-w-sm whitespace-normal text-xs text-gray-500'>Lorem ipsum dolor sit amet consect 
@@ -68,46 +86,25 @@ const Rightmenu = () => {
       </div>
 
       {/*Order Menu Section*/}
+      
       <div className='py-5 text-xs'>
         <span className='text-lg font-bold'>Order Menu</span>
+
         <div>
-
-          <div className='flex py-3 items-center justify-between font-semibold' >
-            <div className='flex items-center'>
-              <img className='max-w-[50px] mr-5' src='/images/pepperonipizza.png'/>
-              <div>
-                <p>Pepperoni pizza</p>
-                <span className='text-gray-500 font-thin'>×1</span>
-              </div>
+        {ordermenu.map(({id, name, image})=>(
+          <div key={id} className='flex py-3 items-center justify-between font-semibold' >
+          <div className='flex items-center'>
+            <img className='max-w-[50px] mr-5' src={image}/>
+            <div>
+              <p>{name}</p>
+              <span className='text-gray-500 font-thin'>×1</span>
             </div>
-
-            <p className='flex'>+<p className='text-primary' >$</p>5.59</p>
           </div>
 
-          <div className='flex py-3 items-center justify-between font-semibold' >
-            <div className='flex items-center'>
-              <img className='max-w-[50px] mr-5' src='/images/cheeseburger.png'/>
-              <div>
-                <p>Cheese Burger</p>
-                <span className='text-gray-500 font-thin'>×1</span>
-              </div>
-            </div>
-            
-            <p className='flex'>+<p className='text-primary' >$</p>5.59</p>
-          </div>
+          <p className='flex'>+<p className='text-primary' >$</p>5.59</p>
+        </div>
+        ))}
 
-          <div className='flex py-3 items-center justify-between font-semibold' >
-            <div className='flex items-center'>
-              <img className='max-w-[50px] mr-5' src='/images/veganpizza.png'/>
-              <div>
-                <p>Vegan pizza</p>
-                <span className='text-gray-500 font-thin'>×1</span>
-              </div>
-            </div>
-            
-            <p className='flex'>+<p className='text-primary' >$</p>5.59</p>
-          </div>
-          
         </div>
 
         {/*horizontal line */}
@@ -135,7 +132,8 @@ const Rightmenu = () => {
           </div>
 
           <button className='bg-primary p-3 rounded-md text-white
-          hover:text-primary hover:bg-white border-primary border-2'>
+          hover:text-primary hover:bg-white border-primary border-2
+          transition ease-in-out duration-200 transform hover:scale-105'>
             Checkout</button>
         </footer>
 

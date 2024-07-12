@@ -1,21 +1,32 @@
-import React from 'react'
-import Sidemenu from './components/Sidemenu.jsx/Sidemenu'
-import Rightmenu from './components/Rightmenu.jsx/Rightmenu'
-import Header from './components/header.jsx/Header'
-import Category from './components/category.jsx/Category'
-import Dishes from './components/Dishes.jsx/Dishes'
-import Recent from './components/recent/Recent'
+import React, {useState} from 'react'
+import Sidemenu from './components/Sidemenu'
+import Rightmenu from './components/Rightmenu'
+import Header from './components/header'
+import Dishes from './components/Dishes'
+import Recent from './components/recent'
+import Category from './components/category'
+
 
 
 const App = () => {
+
+  const [liked, setLiked] = useState("gray");
+
+  const handleLike =() =>{  
+    liked=="gray"? setLiked('red'): setLiked('gray');  
+  }
+
   return (
     <div className='overflow-x-hidden flex bg-gray-300 font-poppins'>
+      <div className='fixed'>
       <Sidemenu />
+      </div>
       
-      <div className='p-7 w-full mainblock bg-gray-100 w-60vw'>
+      
+      <div className='ml-56 p-7 w-4/5 mainblock bg-gray-100 w-60vw'>
       <Header/>
       <Category/>
-      <Dishes/>
+      <Dishes liked={liked} handleLike={handleLike}  />
       <Recent/>
       </div>
 

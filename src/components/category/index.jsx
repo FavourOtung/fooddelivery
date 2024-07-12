@@ -56,8 +56,8 @@ const Category = () => {
 
         <div className='flex justify-between gap-2 mt-5 mb-5'>
             {category.map(({id, name, link, icon}) => (
-              <div className='flex flex-col justify-center items-center
-                bg-white h-24 w-24 rounded-lg'
+              <div className='flex flex-col justify-center items-center bg-white h-24 w-24 rounded-lg
+              transition ease-in-out duration-200 transform hover:scale-110'
                key={id} >
                 <div className='w-18 h-18 text-5xl text-secondary' >{icon}</div>
                 <p className='text-gray-500'>{name}</p>
