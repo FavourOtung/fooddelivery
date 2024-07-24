@@ -26,9 +26,9 @@ const ordermenu= [
 
 
 const Rightmenu = () => {
-  return (
-    <div className='bg-white w-74 p-5'>
-      <nav className='flex justify-between it3ems-center py-2'>
+  return(
+    <div className='bg-white w-1/4 p-5 hidden xl:block'>
+      <nav className='flex justify-between items-center py-2'>
         <div className='flex items-center gap-3 text-xl'>
           <MdOutlineMessage />
           <IoMdNotificationsOutline />
@@ -42,22 +42,22 @@ const Rightmenu = () => {
       <div className='flex flex-col gap-3'>
         <span className='font-semibold'>Your balance</span>
 
-        <div className='bg-primary  flex p-5 px-6 rounded-lg'>
+        <div className='bg-primary  flex p-5 px-4 rounded-lg'>
 
           <div className='flex flex-col bg-white rounded-xl mr-1 px-5 py-2 justify-center'>
             <p className='text-xs'>Balance</p>
             <p className='text-lg font-bold'>$12.000</p>
           </div>
 
-          <div className='flex flex-col items-center gap-2'>
-            <div className='bg-white text-xl w-10 h-10 mx-3 rounded-lg flex items-center justify-center'>
+          <div className='flex flex-col items-center gap-1'>
+            <div className='bg-white text-xl w-9 h-9 mx-3 rounded-lg flex items-center justify-center'>
               <FaMoneyBillTransfer/>
             </div>
             <span className='text-white text-xs'>TopUp</span>
           </div>
 
           <div className='flex flex-col items-center gap-2'>
-            <div className='bg-white w-10 h-10 mx-1 text-xl rounded-lg flex items-center justify-center text-bold'>
+            <div className='bg-white w-9 h-9 mx-1 text-xl rounded-lg flex items-center justify-center text-bold'>
             <FaMoneyBillTransfer/>
             </div>
             <span className='text-white text-xs'>Transfer</span>

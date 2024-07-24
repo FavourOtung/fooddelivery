@@ -26,19 +26,15 @@ const Dishes = ({handleLike, liked}) => {
    
         <div className='text-xs'>
             <div className='flex justify-between items-center'> 
-                <span className='text-sm font-bold'>Popular Dishes for you</span>
+                <span className='text-sm font-bold'>Popular Dishes</span>
                 <p className='text-primary'>view all ›</p>
             </div>
     
-            <div className='flex mt-7 '>
-
-
-
-
+            <div className='flex mt-7 flex-wrap justify-around'>
             
             {Populardishes.map(({id, name, image}) => (
-                    <div className='bg-white w-1/3 mr-3 pt-5 rounded-lg 
-                    transition ease-in-out duration-300 transform hover:scale-105'>
+                    <div className='bg-white w-[30%] mr-2 min-w-44 pt-5 rounded-lg 
+                    transition ease-in-out duration-300 transform hover:scale-105 mb-4'>
                     <div className='flex justify-between items-center'>
                         <span className='bg-red-500 text-white px-3 py-1 rounded-r-md' >15% off</span>
                         <p  onClick={handleLike}  

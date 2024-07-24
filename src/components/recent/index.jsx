@@ -27,10 +27,10 @@ const Recent = () => {
             <p className='text-primary'>view all ›</p>
         </div>
 
-        <div className='flex'>
+        <div className='flex flex-wrap justify-around'>
 
             {recentorder.map(({id, name, image})=>(
-                 <div key={id} className='bg-white w-1/3 mr-3 py-5 rounded-lg
+                 <div key={id} className='bg-white w-[30%] mr-2 min-w-44 py-5 mb-4 rounded-lg
                  transition ease-in-out duration-300 transform hover:scale-105'>
                  <div className='flex justify-end items-end w-full'>
                  <p className='pr-5 text-gray-300 text-base'><FaHeart /></p>

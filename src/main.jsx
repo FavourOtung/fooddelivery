@@ -6,7 +6,7 @@ import App from './App.jsx'
 import './index.css'
 import NotFoundPage from './Pages/NotFoundPage.jsx';
 import FoodOrder from './Pages/FoodOrder.jsx';
-import Sidemenu from './components/Sidemenu/index.jsx';
+import Sidemenu from './components/Sidemenu/Sidemenu.jsx';
 
 
 const router = createBrowserRouter([

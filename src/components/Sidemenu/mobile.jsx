@@ -54,13 +54,13 @@ const SidemenuLinks=[
 ]
 
 
-const Sidemenu = () => {
+const Mobilesidemenu = ({closeSideMenu}) => {
   return (
-    <div className='flex gap-96'>
-    <div className='top-0 left-0 bg-white flex flex-col p-6 
-    items-center text-sm w-56 h-screen justify-between'>
+    <div className='lg:flex w-56 lg:w-64 xl:w-56 transform transition-transform duration-500 bg-white ease-in-out absolute z-1'>
+    <div className='fixed top-0 left-0  flex flex-col p-6 bg-white
+    items-center text-sm w-auto h-screen justify-between'>
 
-        <span className='font-bold pb-5 text-xl flex'>GoMeal
+        <span onClick={()=>closeSideMenu(false)} className='font-bold pb-5 text-xl flex'>GoMeal
           <p className='text-primary'>.</p></span>
 
         {/*sidemenu links section*/}
@@ -94,4 +94,4 @@ const Sidemenu = () => {
   )
 }
 
-export default Sidemenu
+export default Mobilesidemenu
